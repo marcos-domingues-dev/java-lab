@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+/home/marcos/eclipse-alura/java-exceptions/.metadata/.plugins/org.eclipse.jdt.core
+352973926.index
+2289602170.index
