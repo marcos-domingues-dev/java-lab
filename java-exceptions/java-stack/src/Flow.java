@@ -9,7 +9,13 @@ public class Flow {
 	
     public static void main(String[] args) {
         System.out.println("Ini do main");
-        metodo1();
+        try {
+          metodo1();
+        } catch (ArithmeticException | NullPointerException e) {
+        	String msg = e.getClass().getName() + "-> " + e.getMessage();
+        	System.out.println(msg);
+        	//e.printStackTrace();
+        }
         System.out.println("Fim do main");
     }
 
@@ -23,6 +29,10 @@ public class Flow {
         System.out.println("Ini do metodo2");
         for(int i = 1; i <= 5; i++) {
             System.out.println(i);
+            // i = i / 0;
+            
+            Account a = null;
+            a.add();
         }
         System.out.println("Fim do metodo2");
     }
