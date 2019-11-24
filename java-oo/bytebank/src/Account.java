@@ -26,16 +26,16 @@ public abstract class Account {
 		this.balance += value;
 	}
 	
-	public boolean withdraw(double value ) {
+	public boolean withdraw(double value ) throws InsufficientFundsException {
 		if (this.balance >= value) {
 			this.balance -= value;
 			return true;
 		} else {
-			return false;
+			throw new InsufficientFundsException("Insufficient funds; balance: " + this.balance);
 		}
 	}
 
-	public boolean transfers(double value, Account destiny) {
+	public boolean transfers(double value, Account destiny) throws InsufficientFundsException {
 		if (this.withdraw(value)) {
 			destiny.deposit(value);
 			return true;

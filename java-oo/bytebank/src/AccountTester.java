@@ -9,7 +9,11 @@ public class AccountTester {
 		Account vpCheckingAccount = new CheckingAccount(100, 444, vipCustomer);
 		vpSavingsAccount.deposit(400);
 		vpCheckingAccount.deposit(1000);
-		vpCheckingAccount.transfers(50, vpSavingsAccount);
+		try {
+			vpCheckingAccount.transfers(50, vpSavingsAccount);
+		} catch (InsufficientFundsException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		Customer newHeroe = new Customer();
 		newHeroe.setName("Gost Hider");
@@ -17,7 +21,11 @@ public class AccountTester {
 		Account hCheckingAccount = new CheckingAccount(888, 742, newHeroe);
 		hSavingsAccount.deposit(8000);
 		hCheckingAccount.deposit(9000);
-		hCheckingAccount.transfers(30, hSavingsAccount);
+		try {
+			hCheckingAccount.transfers(30000, hSavingsAccount);
+		} catch (InsufficientFundsException e) {
+			System.out.println(e.getMessage());
+		}		
 		
 		System.out.println("Vip Savings: "+ vpSavingsAccount.getBalance());
 		System.out.println("Vip Checking: " + vpCheckingAccount.getBalance());

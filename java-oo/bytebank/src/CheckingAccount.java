@@ -6,7 +6,7 @@ public class CheckingAccount extends Account {
 	}
 	
 	@Override
-	public boolean withdraw(double value) {
+	public boolean withdraw(double value) throws InsufficientFundsException {
 		double taxedValue = value + 0.30;
 		return super.withdraw(taxedValue);
 	}
