@@ -1,33 +1,34 @@
-package model;
+package br.com.bytebank.bytebanksystem.model;
+
 public abstract class Account {
 	private int agency;
 	private int number;
 	private Customer ownerOfAccount;
-	private double balance = 0; 
-	
+	private double balance = 0;
+
 	public Account(int agency, int number, Customer owner) {
 		this.agency = agency;
 		this.number = number;
 		this.ownerOfAccount = owner;
 	}
-	
+
 	public Customer getCustomer() {
 		return ownerOfAccount;
 	}
-	
+
 	public void setCustomer(Customer customer) {
 		this.ownerOfAccount = customer;
 	}
-	
+
 	public double getBalance() {
 		return balance;
-	}	
+	}
 
 	public void deposit(double value) {
 		this.balance += value;
 	}
-	
-	public boolean withdraw(double value ) throws InsufficientFundsException {
+
+	public boolean withdraw(double value) throws InsufficientFundsException {
 		if (this.balance >= value) {
 			this.balance -= value;
 			return true;
@@ -43,9 +44,9 @@ public abstract class Account {
 		} else {
 			return false;
 		}
-			
+
 	}
-	
+
 	public int getAgency() {
 		return agency;
 	}

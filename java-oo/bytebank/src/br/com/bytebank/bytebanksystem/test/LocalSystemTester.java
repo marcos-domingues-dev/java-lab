@@ -1,9 +1,7 @@
-package test;
+package br.com.bytebank.bytebanksystem.test;
 
-//O atalho para importar é "Ctrl + Shift + O".
-
-import model.Customer;
-import model.LocalSystem;
+import br.com.bytebank.bytebanksystem.model.Customer;
+import br.com.bytebank.bytebanksystem.model.LocalSystem;
 
 //Para "qualificar" as classes, utiliza-se o nome completo: nomeDoPacote.NomeDaClasse
 //Pacotes são pastas.

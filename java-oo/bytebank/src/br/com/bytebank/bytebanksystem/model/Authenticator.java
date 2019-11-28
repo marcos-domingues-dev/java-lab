@@ -1,9 +1,9 @@
-package model;
+package br.com.bytebank.bytebanksystem.model;
 
 public class Authenticator implements Authenticable {
 
 	private int password;
-	
+
 	@Override
 	public void setPassword(int password) {
 		this.password = password;

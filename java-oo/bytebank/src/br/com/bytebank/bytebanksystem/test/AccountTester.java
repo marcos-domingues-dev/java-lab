@@ -1,10 +1,10 @@
-package test;
+package br.com.bytebank.bytebanksystem.test;
 
-import model.Account;
-import model.CheckingAccount;
-import model.Customer;
-import model.InsufficientFundsException;
-import model.SavingsAccount;
+import br.com.bytebank.bytebanksystem.model.Account;
+import br.com.bytebank.bytebanksystem.model.CheckingAccount;
+import br.com.bytebank.bytebanksystem.model.Customer;
+import br.com.bytebank.bytebanksystem.model.InsufficientFundsException;
+import br.com.bytebank.bytebanksystem.model.SavingsAccount;
 
 public class AccountTester {
 
