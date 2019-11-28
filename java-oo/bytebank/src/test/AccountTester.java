@@ -1,3 +1,10 @@
+package test;
+
+import model.Account;
+import model.CheckingAccount;
+import model.Customer;
+import model.InsufficientFundsException;
+import model.SavingsAccount;
 
 public class AccountTester {
 
@@ -14,7 +21,7 @@ public class AccountTester {
 		} catch (InsufficientFundsException e) {
 			System.out.println(e.getMessage());
 		}
-		
+
 		Customer newHeroe = new Customer();
 		newHeroe.setName("Gost Hider");
 		Account hSavingsAccount = new SavingsAccount(888, 741, newHeroe);
@@ -25,12 +32,12 @@ public class AccountTester {
 			hCheckingAccount.transfers(30000, hSavingsAccount);
 		} catch (InsufficientFundsException e) {
 			System.out.println(e.getMessage());
-		}		
-		
-		System.out.println("Vip Savings: "+ vpSavingsAccount.getBalance());
+		}
+
+		System.out.println("Vip Savings: " + vpSavingsAccount.getBalance());
 		System.out.println("Vip Checking: " + vpCheckingAccount.getBalance());
-		System.out.println("Heroe Savings: "+ hSavingsAccount.getBalance());
-		System.out.println("Heroe Checking: " + hCheckingAccount.getBalance());		
-		
+		System.out.println("Heroe Savings: " + hSavingsAccount.getBalance());
+		System.out.println("Heroe Checking: " + hCheckingAccount.getBalance());
+
 	}
 }

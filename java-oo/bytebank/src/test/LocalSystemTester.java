@@ -1,3 +1,14 @@
+package test;
+
+//O atalho para importar é "Ctrl + Shift + O".
+
+import model.Customer;
+import model.LocalSystem;
+
+//Para "qualificar" as classes, utiliza-se o nome completo: nomeDoPacote.NomeDaClasse
+//Pacotes são pastas.
+
+//Full Qualified Name ou FQN
 
 public class LocalSystemTester {
 

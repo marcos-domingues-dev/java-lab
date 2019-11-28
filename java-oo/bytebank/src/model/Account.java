@@ -1,3 +1,4 @@
+package model;
 public abstract class Account {
 	private int agency;
 	private int number;
