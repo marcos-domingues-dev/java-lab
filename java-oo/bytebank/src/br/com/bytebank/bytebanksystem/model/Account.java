@@ -1,11 +1,25 @@
 package br.com.bytebank.bytebanksystem.model;
 
+/**
+ * Abstract base class to an account.
+ * 
+ * @author m.domingues
+ * @version 1.0
+ *
+ */
 public abstract class Account {
 	private int agency;
 	private int number;
 	private Customer ownerOfAccount;
 	private double balance = 0;
 
+	/**
+	 * Constructor with defaults params.
+	 * 
+	 * @param agency
+	 * @param number
+	 * @param owner
+	 */
 	public Account(int agency, int number, Customer owner) {
 		this.agency = agency;
 		this.number = number;
