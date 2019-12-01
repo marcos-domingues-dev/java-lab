@@ -1,6 +1,6 @@
-package alura.curso.java.basico;
+package br.com.alura.curso.java.basico;
 
-public class TesteTiposPrimitivos {
+public class PrimitiveTypesTest {
 
 	public static void main(String[] args) {		
 		System.out.println("Hello word!");		
