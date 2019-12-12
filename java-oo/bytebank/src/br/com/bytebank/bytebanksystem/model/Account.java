@@ -26,14 +26,6 @@ public abstract class Account {
 		this.ownerOfAccount = owner;
 	}
 
-	@Override
-	public boolean equals(Object obj) {		
-		Account another = (Account) obj;
-		
-		return (this.getAgency() == another.getAgency())
-			& (this.getNumber() == another.getNumber());
-	}
-
 	public Customer getCustomer() {
 		return ownerOfAccount;
 	}
@@ -83,6 +75,23 @@ public abstract class Account {
 
 	public void setNumber(int number) {
 		this.number = number;
+	}
+
+	@Override
+	public String toString() {
+		return 
+		  "agency=" + this.getAgency() + " " +
+		  "number=" + this.getNumber() + " " +
+		  "owner=" + this.getCustomer().toString() + " " +
+		  "balance=" + balance;		
+	}
+	
+	@Override
+	public boolean equals(Object obj) {		
+		Account another = (Account) obj;
+		
+		return (this.getAgency() == another.getAgency())
+			& (this.getNumber() == another.getNumber());
 	}
 
 }
