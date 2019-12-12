@@ -30,5 +30,9 @@ public class Test {
 		for (Account a : accounts) {
 			System.out.println(a);
 		}
+		
+		if (accounts.contains(a3)) {
+			System.out.println(a3.getCustomer().getName() + " account was matched!");
+		}		
 	}
 }

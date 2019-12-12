@@ -26,6 +26,14 @@ public abstract class Account {
 		this.ownerOfAccount = owner;
 	}
 
+	@Override
+	public boolean equals(Object obj) {		
+		Account another = (Account) obj;
+		
+		return (this.getAgency() == another.getAgency())
+			& (this.getNumber() == another.getNumber());
+	}
+
 	public Customer getCustomer() {
 		return ownerOfAccount;
 	}
