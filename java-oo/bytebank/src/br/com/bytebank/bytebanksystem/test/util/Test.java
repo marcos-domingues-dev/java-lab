@@ -1,6 +1,9 @@
 package br.com.bytebank.bytebanksystem.test.util;
 
 import java.util.ArrayList;
+//import java.util.LinkedList;
+//import java.util.Vector;
+import java.util.List;
 
 import br.com.bytebank.bytebanksystem.model.Account;
 import br.com.bytebank.bytebanksystem.model.CheckingAccount;
@@ -10,7 +13,9 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		ArrayList<Account> accounts = new ArrayList<Account>();
+		List<Account> accounts = new ArrayList<Account>();
+		//List<Account> accounts2 = new java.util.LinkedList<Account>();
+		//List<Account> accounts2 = new java.util.Vector<Account>();
 
 		Customer c1 = new Customer();
 		c1.setName("Robert C. \"Uncle Bob\" Martin");

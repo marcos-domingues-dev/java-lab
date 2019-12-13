@@ -44,7 +44,7 @@ public class Customer {
 	public String toString() {
 		return
 			"name=" + this.getName() + " " +
-			"cpf" + this.getCpf() + " " +
+			"cpf=" + this.getCpf() + " " +
 			"adress=" + this.getAddress();				
 				
 	}
