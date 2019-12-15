@@ -40,16 +40,26 @@ public class SortTest {
 		Account ca4 = new CheckingAccount(001, 310, customer4);
 		items.add(ca4);
 
+		// Not sorted				
+		System.out.println("----------");
+		System.out.println("Not sorted");
 		for (Account a : items) {
 			System.out.println(a.toString());
 		}
 
-		// items.sort(new AccountComparator());
-		Collections.sort(items, new AccountComparator());
-		
+		// Natural sort				
 		System.out.println("----------");
+		System.out.println("Natural sort - using interface 'java.lang.Comparable'");
+		Collections.sort(items);
 		
+		for (Account a : items) {
+			System.out.println(a.toString());
+		}		
 		
+		// Sort list				
+		System.out.println("----------");
+		System.out.println("Sort list with class comparator that implements 'java.util.Comparator'.");		
+		items.sort(new AccountComparator());
 		for (Account a : items) {
 			System.out.println(a.toString());
 		}

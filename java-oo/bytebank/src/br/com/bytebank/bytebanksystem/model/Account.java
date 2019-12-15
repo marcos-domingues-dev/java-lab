@@ -7,7 +7,7 @@ package br.com.bytebank.bytebanksystem.model;
  * @version 1.0
  *
  */
-public abstract class Account {
+public abstract class Account implements Comparable<Account> {
 	private int agency;
 	private int number;
 	private Customer ownerOfAccount;
@@ -94,4 +94,10 @@ public abstract class Account {
 			& (this.getNumber() == another.getNumber());
 	}
 
+	
+	@Override
+	public int compareTo(Account another) {
+		return Double.compare(this.getBalance(), another.getBalance());
+	}
+	
 }
