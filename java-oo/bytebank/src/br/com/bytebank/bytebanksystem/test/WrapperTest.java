@@ -3,7 +3,7 @@ package br.com.bytebank.bytebanksystem.test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TesteWrapper {
+public class WrapperTest {
 
 	public static void main(String[] args) {
 		Integer ref = Integer.valueOf("3");
