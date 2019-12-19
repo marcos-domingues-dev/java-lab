@@ -2,6 +2,7 @@ package br.com.bytebank.bytebanksystem.test;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import br.com.bytebank.bytebanksystem.model.Account;
@@ -9,7 +10,7 @@ import br.com.bytebank.bytebanksystem.model.AccountComparator;
 import br.com.bytebank.bytebanksystem.model.CheckingAccount;
 import br.com.bytebank.bytebanksystem.model.Customer;
 
-public class SortTest {
+public class AnonymousSortTest {
 
 	public static void main(String[] args) {
 
@@ -39,7 +40,8 @@ public class SortTest {
 		customer4.setName("Nicholas Joseph Fury");
 		Account ca4 = new CheckingAccount(001, 310, customer4);
 		items.add(ca4);
-
+		
+		// -------------------------------------------------------------------------------- //
 		// Not sorted				
 		System.out.println("----------");
 		System.out.println("Not sorted");
@@ -47,22 +49,60 @@ public class SortTest {
 			System.out.println(a.toString());
 		}
 
+		// -------------------------------------------------------------------------------- //		
 		// Natural sort				
 		System.out.println("----------");
 		System.out.println("Natural sort - using interface 'java.lang.Comparable'");
-		Collections.sort(items);
+		Collections.sort(items); //--> Using an method @Override in Account.compareTo().
 		
 		for (Account a : items) {
 			System.out.println(a.toString());
 		}		
 		
+		// -------------------------------------------------------------------------------- //		
 		// Sort list				
 		System.out.println("----------");
 		System.out.println("Sort list with class comparator that implements 'java.util.Comparator'.");		
-		items.sort(new AccountComparator());
+		items.sort(new AccountComparator()); //--> Using an class to sort items.
 		for (Account a : items) {
 			System.out.println(a.toString());
 		}
+		
+		// -------------------------------------------------------------------------------- //
+		// Sort list - anonymous class
+		System.out.println("----------");
+		System.out.println("Sort list with anonymous class.");		
+		items.sort(
+			new Comparator<Account>() {
+				@Override
+				public int compare(Account al, Account ar) {
+					return Integer.compare(al.getNumber(), ar.getNumber());
+				}
+			}
+		);
+		for (Account a : items) {
+			System.out.println(a.toString());
+		}
+
+		// -------------------------------------------------------------------------------- //
+		// Assign an anonymous variable to sort	
+		System.out.println("----------");
+		System.out.println("Sort list with an anonymous sorting variable.");	
+		
+		Comparator<Account> comp = new Comparator<Account>() {
+			@Override
+			public int compare(Account al, Account ar) {
+				return Integer.compare(al.getNumber(), ar.getNumber());
+			}			
+		};
+		
+		items.sort(comp);
+		
+		for (Account a : items) {
+			System.out.println(a.toString());
+		}		
+		// -------------------------------------------------------------------------------- //
+		//
 
 	}
 }
