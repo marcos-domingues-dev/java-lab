@@ -11,7 +11,7 @@ import br.com.bytebank.bytebanksystem.model.AccountComparator;
 import br.com.bytebank.bytebanksystem.model.CheckingAccount;
 import br.com.bytebank.bytebanksystem.model.Customer;
 
-public class AnonymousSortTest {
+public class LambdasTest {
 
 	public static void main(String[] args) {
 
