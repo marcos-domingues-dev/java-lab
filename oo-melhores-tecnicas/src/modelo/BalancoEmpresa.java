@@ -3,23 +3,24 @@ package modelo;
 import java.util.HashMap;
 
 public class BalancoEmpresa {
-
 	private HashMap<String, Divida> dividas = new HashMap<String, Divida>();
 
-	public void adicionaDivida(String credor, String cnpjCredor, double valor) {
+	public void registraDivida(String credor, String cnpjCredor, double valor) {
 		Divida divida = new Divida();
-		divida.setNomeCredor(credor);
+		divida.setTotal(valor);
+		divida.setCredor(credor);
 		divida.setCnpjCredor(cnpjCredor);
-		divida.setValorTotal(valor);
-
 		dividas.put(cnpjCredor, divida);
 	}
 
-	public void pagar(String cnpjCredor, double valor) {
-		Divida d = dividas.get(cnpjCredor);
-		if (d != null) {
-			d.paga(valor);
+	public void pagaDivida(String cnpjCredor, double valor, String nomePagador, String cnpjPagador) {
+		Divida divida = dividas.get(cnpjCredor);
+		if (divida != null) {
+			Pagamento pagamento = new Pagamento();
+			pagamento.setCnpjPagador(cnpjPagador);
+			pagamento.setPagador(nomePagador);
+			pagamento.setValor(valor);
+			divida.registra(pagamento);
 		}
 	}
-
 }
