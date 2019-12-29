@@ -1,26 +1,34 @@
 package modelo;
 
-import java.util.HashMap;
+import java.util.Map.Entry;
+
+import teste.ArmazenadorDeDividas;
 
 public class BalancoEmpresa {
-	private HashMap<String, Divida> dividas = new HashMap<String, Divida>();
+	private ArmazenadorDeDividas armazemDeDividas;
 
-	public void registraDivida(String credor, String cnpjCredor, double valor) {
-		Divida divida = new Divida();
-		divida.setTotal(valor);
-		divida.setCredor(credor);
-		divida.setCnpjCredor(cnpjCredor);
-		dividas.put(cnpjCredor, divida);
+	public BalancoEmpresa(ArmazenadorDeDividas armazemDeDividas) {
+		this.armazemDeDividas = armazemDeDividas;
 	}
 
-	public void pagaDivida(String cnpjCredor, double valor, String nomePagador, String cnpjPagador) {
-		Divida divida = dividas.get(cnpjCredor);
+	public void registraDivida(Divida divida) {
+		armazemDeDividas.salvar(divida);
+	}
+
+	public void pagaDivida(Documento documentoCredor, Pagamento pagamento) {
+		Divida divida = armazemDeDividas.buscar(documentoCredor);
 		if (divida != null) {
-			Pagamento pagamento = new Pagamento();
-			pagamento.setCnpjPagador(cnpjPagador);
-			pagamento.setPagador(nomePagador);
-			pagamento.setValor(valor);
-			divida.registra(pagamento);
+			divida.registrarPagamento(pagamento);
 		}
+		armazemDeDividas.salvar(divida);
+	}
+
+	@Override
+	public String toString() {
+		String textoSaida = "";
+		for (Entry<Documento, Divida> item : armazemDeDividas.listar()) {
+			textoSaida += item.getValue().toString();
+		}
+		return textoSaida;
 	}
 }
