@@ -3,6 +3,24 @@ package strategy.investimentos.model;
 public class Conta {
 	private double saldo;
 	private String titular;
+	private String numero;
+	private String agencia;
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(String agencia) {
+		this.agencia = agencia;
+	}
 
 	public Conta() {
 		this.titular = "Unknown";
