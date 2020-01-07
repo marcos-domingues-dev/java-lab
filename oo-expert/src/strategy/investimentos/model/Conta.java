@@ -6,6 +6,14 @@ public class Conta {
 	private String numero;
 	private String agencia;
 
+	
+	@Override
+	public String toString() {
+		return "Titular: " + this.titular + " - " +
+				"Conta:" + this.agencia + "/" + this.numero +
+				"Saldo: " + this.saldo;
+	}
+	
 	public String getNumero() {
 		return numero;
 	}
