@@ -1,5 +1,7 @@
 package interpreter.model;
 
+import visitor.model.ExpressaoNumericaVisitor;
+
 public class Divisao implements ExpressaoNumerica {
 	private ExpressaoNumerica esquerda;
 	private ExpressaoNumerica direita;
@@ -12,5 +14,18 @@ public class Divisao implements ExpressaoNumerica {
 	@Override
 	public int avaliar() {
 		return esquerda.avaliar() / direita.avaliar();
+	}
+
+	@Override
+	public void aceitarVisitante(ExpressaoNumericaVisitor visitante) {
+		visitante.visitarDivisao(this);
+	}
+
+	public ExpressaoNumerica getEsquerda() {
+		return esquerda;
+	}
+
+	public ExpressaoNumerica getDireita() {
+		return direita;
 	}
 }

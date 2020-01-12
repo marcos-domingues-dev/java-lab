@@ -1,7 +1,8 @@
 package interpreter.model;
 
-public class Soma implements ExpressaoNumerica {
+import visitor.model.ExpressaoNumericaVisitor;
 
+public class Soma implements ExpressaoNumerica {
 	private ExpressaoNumerica esquerda;
 	private ExpressaoNumerica direita;
 
@@ -17,5 +18,17 @@ public class Soma implements ExpressaoNumerica {
 		int valorDireita = direita.avaliar();
 		
 		return valorEsquerda + valorDireita;
+	}
+	
+	public ExpressaoNumerica getEsquerda() {
+		return esquerda;
+	}
+
+	public ExpressaoNumerica getDireita() {
+		return direita;
+	}
+	@Override
+	public void aceitarVisitante(ExpressaoNumericaVisitor visitante) {
+		visitante.visitarSoma(this);
 	}
 }

@@ -1,5 +1,7 @@
 package interpreter.model;
 
+import visitor.model.ExpressaoNumericaVisitor;
+
 public class RaizQuadrada implements ExpressaoNumerica {
 	private ExpressaoNumerica expressao;
 
@@ -13,5 +15,14 @@ public class RaizQuadrada implements ExpressaoNumerica {
 		double resultado = Math.sqrt(valor);
 		
 		return (int) resultado;
+	}
+
+	public ExpressaoNumerica getExpressao() {
+		return expressao;
+	}
+
+	@Override
+	public void aceitarVisitante(ExpressaoNumericaVisitor visitante) {
+		visitante.visitarRaizQuadrada(this);
 	}
 }
