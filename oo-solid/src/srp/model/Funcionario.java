@@ -49,4 +49,8 @@ public class Funcionario {
 	public void setSalarioBase(double salarioBase) {
 		this.salarioBase = salarioBase;
 	}
+
+	public double calculaSalario() {
+		return this.cargo.getRegraSalario().calcula(this);
+	}
 }
