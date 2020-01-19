@@ -1,7 +1,9 @@
 package coupling.model;
 
-public class EnviadorDeEmail {
-    public void enviaEmail(NotaFiscal nf) {
-        System.out.println("envia email da nf " + nf.getId());
-    }
+public class EnviadorDeEmail implements AcaoAposGerarNf {
+
+	@Override
+	public void executar(NotaFiscal notaFiscal) {
+		System.out.println("envia email da nf " + notaFiscal.getId());
+	}
 }

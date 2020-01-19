@@ -1,27 +1,28 @@
 package coupling.model;
 
-public class GeradorDeNotaFiscal {
-    private final EnviadorDeEmail email;
-    private final NotaFiscalDao dao;
+import java.util.List;
 
-    public GeradorDeNotaFiscal(EnviadorDeEmail email, NotaFiscalDao dao) {
-        this.email = email;
-        this.dao = dao;
+public class GeradorDeNotaFiscal {
+    private final List<AcaoAposGerarNf> acoesAposGerarNf;
+
+    public GeradorDeNotaFiscal(List<AcaoAposGerarNf> acoesAposGerarNf) {
+        this.acoesAposGerarNf = acoesAposGerarNf;
     }
 
     public NotaFiscal gera(Fatura fatura) {
 
         double valor = fatura.getValorMensal();
 
-        NotaFiscal nf = new NotaFiscal(valor, impostoSimplesSobreO(valor));
+        NotaFiscal nf = new NotaFiscal(valor, impostoSimplesSobre(valor));
 
-        email.enviaEmail(nf);
-        dao.persiste(nf);
+        for (AcaoAposGerarNf acao : acoesAposGerarNf) {
+        	acao.executar(nf);
+        }
 
         return nf;
     }
 
-    private double impostoSimplesSobreO(double valor) {
+    private double impostoSimplesSobre(double valor) {
         return valor * 0.06;
     }
 }

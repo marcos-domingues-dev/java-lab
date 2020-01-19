@@ -1,5 +1,9 @@
 package coupling.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import coupling.model.AcaoAposGerarNf;
 import coupling.model.EnviadorDeEmail;
 import coupling.model.Fatura;
 import coupling.model.GeradorDeNotaFiscal;
@@ -11,8 +15,13 @@ public class TestaGeradorDeNotaFiscal {
 	
 	public static void main(String[] args) {
 		EnviadorDeEmail mail = new EnviadorDeEmail();
-		NotaFiscalDao nfdao = new NotaFiscalDao();
-		GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal(mail, nfdao);
+		NotaFiscalDao nfDao = new NotaFiscalDao();
+		
+		List<AcaoAposGerarNf> acoesAposGerarNf = new ArrayList<AcaoAposGerarNf>();
+		acoesAposGerarNf.add(mail);
+		acoesAposGerarNf.add(nfDao);
+		
+		GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal(acoesAposGerarNf);
 		
 		Fatura fatura = new Fatura();
 		fatura.setCliente("Martin Fowler");
