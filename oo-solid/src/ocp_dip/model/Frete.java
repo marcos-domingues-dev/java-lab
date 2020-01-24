@@ -1,6 +1,6 @@
 package ocp_dip.model;
 
-public class Frete {
+public class Frete implements Entrega {
 
     public double para(final String cidade) {
         if (cidade.equals("São Paulo")) {
@@ -9,5 +9,4 @@ public class Frete {
             return 50;
         }
     }
-
 }

@@ -16,5 +16,4 @@ public class Compra {
     public String getCidade() {
         return cidade;
     }
-
 }

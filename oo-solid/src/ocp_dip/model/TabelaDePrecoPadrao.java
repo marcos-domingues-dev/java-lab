@@ -1,6 +1,6 @@
 package ocp_dip.model;
 
-public class TabelaDePrecoPadrao {
+public class TabelaDePrecoPadrao implements TabelaDePreco {
 
     public double descontoPara(final double valor) {
         if (valor >= 200) {
