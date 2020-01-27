@@ -15,7 +15,7 @@ public class TesteEncapsulamento {
         final List<Boleto> boletos = new ArrayList<Boleto>();
         boletos.add(new Boleto(200));
         boletos.add(new Boleto(180));
-        boletos.add(new Boleto(120));
+        boletos.add(new Boleto(100));
 
         final ProcessadorDeBoletos processador = new ProcessadorDeBoletos();
         processador.processa(boletos, fatura);

@@ -23,10 +23,7 @@ public class TestaGeradorDeNotaFiscal {
 		
 		GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal(acoesAposGerarNf);
 		
-		Fatura fatura = new Fatura();
-		fatura.setCliente("Martin Fowler");
-		fatura.setValorMensal(200);
-		
+		Fatura fatura = new Fatura(200, "Martin Fowler");	
 		NotaFiscal nf = gerador.gera(fatura);
 		
 		System.out.println("Valor bruto: " + nf.getValorBruto());

@@ -11,5 +11,4 @@ public class Boleto {
     public double getValor() {
         return this.valor;
     }
-
 }
