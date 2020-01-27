@@ -1,25 +1,28 @@
 package lsp_inheritance.model;
 
-public class ContaComum {
+public class ContaDeEstudante {
     private ManipuladorDeSaldo manipulador;
+    private int milhas;
 
-    public ContaComum() {
+    public int getMilhas() {
+        return milhas;
+    }
+
+    public ContaDeEstudante() {
         this.manipulador = new ManipuladorDeSaldo();
     }
 
     public void deposita(double valor) {
         this.manipulador.depositar(valor);
+        this.milhas += (int) valor;
     }
 
     public void saca(double valor) {
         this.manipulador.sacar(valor);
     }
 
-    public void rende() {
-        this.manipulador.render();
-    }
-
     public double getSaldo() {
         return this.manipulador.getSaldo();
     }
+
 }

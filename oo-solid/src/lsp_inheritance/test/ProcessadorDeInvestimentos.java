@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import lsp_inheritance.model.ContaComum;
-import lsp_inheritance.model.ContaDeEstudamte;
+import lsp_inheritance.model.ContaDeEstudante;
 
 public class ProcessadorDeInvestimentos {
 
@@ -17,14 +17,15 @@ public class ProcessadorDeInvestimentos {
     }
 
     private static List<ContaComum> ContasDoBanco() {
-        return Arrays.asList(umaContaCom(100), umaContaCom(150), contaDeEstudante(200));
+        // -> Não aceita mais ! contaDeEstudante(200)
+        return Arrays.asList(umaContaCom(100), umaContaCom(150));
     }
 
-    private static ContaComum contaDeEstudante(final double amount) {
-        final ContaDeEstudamte c = new ContaDeEstudamte();
-        c.deposita(amount);
-        return c;
-    }
+    // private static ContaDeEstudante contaDeEstudante(final double amount) {
+    //     final ContaDeEstudante c = new ContaDeEstudante();
+    //     c.deposita(amount);
+    //     return c;
+    // }
 
     private static ContaComum umaContaCom(final double amount) {
         final ContaComum c = new ContaComum();
