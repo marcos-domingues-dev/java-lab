@@ -1,7 +1,9 @@
 package br.com.bytebank.bytebanksystem.model;
 
-public class Authenticator implements Authenticable {
+import java.io.Serializable;
 
+public class Authenticator implements Authenticable, Serializable {
+	private static final long serialVersionUID = 1L;	
 	private int password;
 
 	@Override

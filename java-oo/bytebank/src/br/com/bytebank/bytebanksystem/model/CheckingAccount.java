@@ -1,6 +1,9 @@
 package br.com.bytebank.bytebanksystem.model;
 
-public class CheckingAccount extends Account {
+/*import java.io.Serializable;*/
+
+public class CheckingAccount extends Account /* implements Serializable*/ {
+	private static final long serialVersionUID = 1L;
 
 	public CheckingAccount(int agency, int number, Customer owner) {
 		super(agency, number, owner);

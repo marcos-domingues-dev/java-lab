@@ -7,4 +7,5 @@
 /java-oo/bytebank/bin
 /java-oo/folha-pagto/bin
 /java-oo/bytebank/doc
-
+*.bin
+*.class

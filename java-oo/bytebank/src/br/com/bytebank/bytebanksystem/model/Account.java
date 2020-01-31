@@ -1,5 +1,7 @@
 package br.com.bytebank.bytebanksystem.model;
 
+import java.io.Serializable;
+
 /**
  * Abstract base class to an account.
  * 
@@ -7,10 +9,11 @@ package br.com.bytebank.bytebanksystem.model;
  * @version 1.0
  *
  */
-public abstract class Account implements Comparable<Account> {
+public abstract class Account implements Serializable, Comparable<Account> {
+	private static final long serialVersionUID = 1L;
 	private int agency;
 	private int number;
-	private Customer ownerOfAccount;
+	private transient Customer ownerOfAccount; //-> Impedindo de serializar o objeto ...
 	private double balance = 0;
 
 	/**
