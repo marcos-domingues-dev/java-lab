@@ -1,8 +1,10 @@
 package test;
 
+import java.io.UnsupportedEncodingException;
+
 public class TestaCharacterSets {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
 
         // ASCII (American Standard Code for Information Interchange).
         // Engloba todos os caracteres da língua inglesa
@@ -36,6 +38,21 @@ public class TestaCharacterSets {
         // os codepoints para um formato binário.
 
         // Além do UTF há outros exemplos de Encodings, como o ASCII e o Windows 1252.
+
+        String[] codes = { "ISO-8859-1", "UTF-8", "UTF-16" };
+        String palavra = "ç";
+
+        for (String encoding : codes) {
+            byte[] b = palavra.getBytes(encoding);
+            System.out.printf("%10s\t%d\t", encoding, b.length);
+            for (int k = 0; k < b.length; k++) {
+                String hex = Integer.toHexString((b[k] + 256) % 256);
+                if (hex.length() == 1)
+                    hex = "0" + hex;
+                System.out.print(hex);
+            }
+            System.out.println();
+        }
 
     }
 }
