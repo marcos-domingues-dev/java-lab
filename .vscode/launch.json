@@ -1,0 +1,535 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PrimitiveTypesTest<AluraPrimeirosPassos>",
+            "request": "launch",
+            "mainClass": "AluraPrimeirosPassos/br.com.alura.curso.java.basico.PrimitiveTypesTest",
+            "projectName": "AluraPrimeirosPassos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StringBuilderTest<AluraPrimeirosPassos>",
+            "request": "launch",
+            "mainClass": "AluraPrimeirosPassos/br.com.alura.curso.java.basico.StringBuilderTest",
+            "projectName": "AluraPrimeirosPassos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StringTest<AluraPrimeirosPassos>",
+            "request": "launch",
+            "mainClass": "AluraPrimeirosPassos/br.com.alura.curso.java.basico.StringTest",
+            "projectName": "AluraPrimeirosPassos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AccountTester<BiteBank>",
+            "request": "launch",
+            "mainClass": "biteBank/bitebank.test.AccountTester",
+            "projectName": "BiteBank"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PrimitiveArrayTest<BiteBank>",
+            "request": "launch",
+            "mainClass": "biteBank/bitebank.test.PrimitiveArrayTest",
+            "projectName": "BiteBank"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ReferenceArrayTest<BiteBank>",
+            "request": "launch",
+            "mainClass": "biteBank/bitebank.test.ReferenceArrayTest",
+            "projectName": "BiteBank"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ConnectionTest<ConnectionWithException>",
+            "request": "launch",
+            "mainClass": "ConnectionTest",
+            "projectName": "ConnectionWithException"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AccountTester<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.AccountTester",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AnonymousSortTest<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.AnonymousSortTest",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ArraySortTest<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.ArraySortTest",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-IntegerTest<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.IntegerTest",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-IteratorTest<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.IteratorTest",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LambdasTest<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.LambdasTest",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LocalSystemTester<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.LocalSystemTester",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PrimitiveArrayTest<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.PrimitiveArrayTest",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ReferenceArrayTest<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.ReferenceArrayTest",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-WrapperTest<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.WrapperTest",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestSerializationAccount<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.serialization.TestSerializationAccount",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Test<bytebank-herdado-conta>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.util.Test",
+            "projectName": "bytebank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LibraryTest<bytebank-library>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanklib.LibraryTest",
+            "projectName": "bytebank-library"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AccountTester<bytebank-library>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.AccountTester",
+            "projectName": "bytebank-library"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LocalSystemTester<bytebank-library>",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.bytebanksystem.test.LocalSystemTester",
+            "projectName": "bytebank-library"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-folhaTester<folha-pagto>",
+            "request": "launch",
+            "mainClass": "folhaTester",
+            "projectName": "folha-pagto"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Teste<java-io>",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.Teste",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteCopiarArquivo<java-io>",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.TesteCopiarArquivo",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteEscrita<java-io>",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.TesteEscrita",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteEscritaFileWriter<java-io>",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.TesteEscritaFileWriter",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteEscritaPrintStreamPrintWriter<java-io>",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.TesteEscritaPrintStreamPrintWriter",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteLeitura<java-io>",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.TesteLeitura",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteLeitura2<java-io>",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.TesteLeitura2",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteUnicodeEncoding<java-io>",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.TesteUnicodeEncoding",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaCharacterSets<java-io>",
+            "request": "launch",
+            "mainClass": "test.TestaCharacterSets",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaCopiarArquivo<java-io>",
+            "request": "launch",
+            "mainClass": "test.TestaCopiarArquivo",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaEscrita<java-io>",
+            "request": "launch",
+            "mainClass": "test.TestaEscrita",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaEscritaFileWriter<java-io>",
+            "request": "launch",
+            "mainClass": "test.TestaEscritaFileWriter",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaEscritaPrint<java-io>",
+            "request": "launch",
+            "mainClass": "test.TestaEscritaPrint",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaLeitura<java-io>",
+            "request": "launch",
+            "mainClass": "test.TestaLeitura",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaLeituraScannerComFormat<java-io>",
+            "request": "launch",
+            "mainClass": "test.TestaLeituraScannerComFormat",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaLerDoTeclado<java-io>",
+            "request": "launch",
+            "mainClass": "test.TestaLerDoTeclado",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaProperties<java-io>",
+            "request": "launch",
+            "mainClass": "test.TestaProperties",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaTempoDeEscrita<java-io>",
+            "request": "launch",
+            "mainClass": "test.TestaTempoDeEscrita",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteSerializacao<java-io>",
+            "request": "launch",
+            "mainClass": "test.TesteSerializacao",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteSerializacaoCliente<java-io>",
+            "request": "launch",
+            "mainClass": "test.TesteSerializacaoCliente",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteUnicodeEncoding<java-io>(1)",
+            "request": "launch",
+            "mainClass": "test.TesteUnicodeEncoding",
+            "projectName": "java-io"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Flow<java-stack>",
+            "request": "launch",
+            "mainClass": "Flow",
+            "projectName": "java-stack"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FlowWithCath<java-stack>",
+            "request": "launch",
+            "mainClass": "FlowWithCath",
+            "projectName": "java-stack"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteNFBuilder<oo-expert>",
+            "request": "launch",
+            "mainClass": "builder.test.TesteNFBuilder",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaCorrenteDeDescontos<oo-expert>",
+            "request": "launch",
+            "mainClass": "chainOfResponsibility.test.TestaCorrenteDeDescontos",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaRequisicao<oo-expert>",
+            "request": "launch",
+            "mainClass": "chainOfResponsibility.test.TestaRequisicao",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaFiltroConta<oo-expert>",
+            "request": "launch",
+            "mainClass": "decorator.test.TestaFiltroConta",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaImpostoComposto<oo-expert>",
+            "request": "launch",
+            "mainClass": "decorator.test.TestaImpostoComposto",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteDatabaseConnectionFactory<oo-expert>",
+            "request": "launch",
+            "mainClass": "factory.test.TesteDatabaseConnectionFactory",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteNotasMusicais<oo-expert>",
+            "request": "launch",
+            "mainClass": "flyweight.test.TesteNotasMusicais",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaExpressaoNumerica<oo-expert>",
+            "request": "launch",
+            "mainClass": "interpreter.test.TestaExpressaoNumerica",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaContrato<oo-expert>",
+            "request": "launch",
+            "mainClass": "memento.test.TestaContrato",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaEstadoOrcamentop<oo-expert>",
+            "request": "launch",
+            "mainClass": "state.test.TestaEstadoOrcamentop",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteEstadoConta<oo-expert>",
+            "request": "launch",
+            "mainClass": "state.test.TesteEstadoConta",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaCalculadorDeImpostos<oo-expert>",
+            "request": "launch",
+            "mainClass": "strategy.impostos.test.TestaCalculadorDeImpostos",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaIccc<oo-expert>",
+            "request": "launch",
+            "mainClass": "strategy.impostos.test.TestaIccc",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaRealizadorDeInvestimentos<oo-expert>",
+            "request": "launch",
+            "mainClass": "strategy.investimentos.test.TestaRealizadorDeInvestimentos",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteTemplateDeImpostos<oo-expert>",
+            "request": "launch",
+            "mainClass": "template.impostos.test.TesteTemplateDeImpostos",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaImpressoraPrefixa<oo-expert>",
+            "request": "launch",
+            "mainClass": "visitor.test.TestaImpressoraPrefixa",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaImpressoraVisitor<oo-expert>",
+            "request": "launch",
+            "mainClass": "visitor.test.TestaImpressoraVisitor",
+            "projectName": "oo-expert"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaAplicacao<oo-melhores-tecnicas>",
+            "request": "launch",
+            "mainClass": "financial_module_info/teste.TestaAplicacao",
+            "projectName": "oo-melhores-tecnicas"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaFinanceiro<oo-melhores-tecnicas>",
+            "request": "launch",
+            "mainClass": "financial_module_info/teste.TestaFinanceiro",
+            "projectName": "oo-melhores-tecnicas"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaRelatorioDeDivida<oo-melhores-tecnicas>",
+            "request": "launch",
+            "mainClass": "financial_module_info/teste.TestaRelatorioDeDivida",
+            "projectName": "oo-melhores-tecnicas"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaGeradorDeNotaFiscal<oo-solid>",
+            "request": "launch",
+            "mainClass": "coupling.test.TestaGeradorDeNotaFiscal",
+            "projectName": "oo-solid"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteEncapsulamento<oo-solid>",
+            "request": "launch",
+            "mainClass": "encapsulation.test.TesteEncapsulamento",
+            "projectName": "oo-solid"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ProcessadorDeInvestimentos<oo-solid>",
+            "request": "launch",
+            "mainClass": "lsp_inheritance.test.ProcessadorDeInvestimentos",
+            "projectName": "oo-solid"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteCalculadoraDePrecos<oo-solid>",
+            "request": "launch",
+            "mainClass": "ocp_dip.test.TesteCalculadoraDePrecos",
+            "projectName": "oo-solid"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestaCalculadoraDeSalario<oo-solid>",
+            "request": "launch",
+            "mainClass": "srp.test.TestaCalculadoraDeSalario",
+            "projectName": "oo-solid"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Teste",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.Teste"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteEscrita",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.TesteEscrita"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteEscritaFileWriter",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.TesteEscritaFileWriter"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesteLeitura",
+            "request": "launch",
+            "mainClass": "br.com.alura.java.io.teste.TesteLeitura"
+        }
+    ]
+}
