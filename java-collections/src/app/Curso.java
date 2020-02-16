@@ -1,9 +1,11 @@
 package app;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Curso {
@@ -12,6 +14,7 @@ public class Curso {
     private String instrutor;
     private List<Aula> aulas = new LinkedList<Aula>();
     private Set<Aluno> alunos = new HashSet<>();
+    private Map<Integer, Aluno> matriculaParaAluno = new HashMap<>();
 
     public Curso(String nome, String instrutor) {
         // Boa prática!
@@ -34,6 +37,9 @@ public class Curso {
 
     public void matricula(Aluno aluno) {
         this.alunos.add(aluno);
+
+        // Apenas o último aluno adicionado é apresentado na chave é mantido.
+        this.matriculaParaAluno.put(aluno.getNumeroMatricula(), aluno);
     }
 
     public boolean estaMatriculado(Aluno aluno) {
@@ -74,6 +80,13 @@ public class Curso {
     public String toString() {
         return "Curso [nome: " + this.nome + ", instrutor: " + this.instrutor + ", aulas: " + this.aulas + ", alunos: "
                 + this.alunos + "]";
+    }
+
+    public Aluno buscaMatriculado(int matricula) {
+        // Com Map<> se pesquisa pela "chave" !
+        // pois o algoritmo implementado dentro de HashMap é bastante otimizado para
+        // velocidade (usa o mesmo princípio da tabela de espalhamento)
+        return this.matriculaParaAluno.get(matricula);
     }
 
 }
