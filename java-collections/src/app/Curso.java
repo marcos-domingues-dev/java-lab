@@ -14,6 +14,15 @@ public class Curso {
     private Set<Aluno> alunos = new HashSet<>();
 
     public Curso(String nome, String instrutor) {
+        // Boa prática!
+        // String nome é um objeto - pode ser null
+        if (nome == null) {
+            throw new NullPointerException("Nome do curso não pode ser null.");
+        }
+        if (instrutor == null) {
+            throw new NullPointerException("Nome do instrutor não pode ser null.");
+        }
+
         this.nome = nome;
         this.instrutor = instrutor;
     }
@@ -25,6 +34,15 @@ public class Curso {
 
     public void matricula(Aluno aluno) {
         this.alunos.add(aluno);
+    }
+
+    public boolean estaMatriculado(Aluno aluno) {
+        // Olhando a documentação da interface Collection e indo no método contains,
+        // veremos que ele utiliza o método equals - do Aluno.
+        // o contains utilizará a estrutura bem implementada da tabela de espalhamento,
+        // e irá retornar rapidamente true ou false
+
+        return this.alunos.contains(aluno);
     }
 
     public String getNome() {
@@ -54,7 +72,8 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "Curso [nome: " + this.nome + ", instrutor: " + this.instrutor + ", aulas: " + this.aulas + ", alunos: " + this.alunos + "]";
+        return "Curso [nome: " + this.nome + ", instrutor: " + this.instrutor + ", aulas: " + this.aulas + ", alunos: "
+                + this.alunos + "]";
     }
-    
+
 }

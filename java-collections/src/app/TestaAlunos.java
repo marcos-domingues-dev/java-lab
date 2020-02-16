@@ -23,5 +23,11 @@ public class TestaAlunos {
         curso.getAlunos().forEach(aluno -> {
             System.out.println(aluno);
         });
+
+
+        Aluno alunoGuilherme = new Aluno("Guilherme Silveira", 1015);
+        System.out.println();
+        System.out.println("O aluno Guilherme está matriculado ?");
+		System.out.println(curso.estaMatriculado(alunoGuilherme));
     }
 }
