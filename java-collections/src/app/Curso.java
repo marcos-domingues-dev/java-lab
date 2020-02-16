@@ -10,14 +10,6 @@ public class Curso {
     private String instrutor;
     private List<Aula> aulas = new LinkedList<Aula>();
 
-    /*
-     * O ArrayList, como diz o nome, internamente usa um array para guardar os
-     * elementos. Ele consegue fazer operações de maneira muito eficiente, como
-     * invocar o método get(indice). Se você precisa pegar o décimo quinto elemento,
-     * ele te devolverá isso bem rápido.
-     * 
-     */
-
     public Curso(String nome, String instrutor) {
         this.nome = nome;
         this.instrutor = instrutor;
@@ -40,4 +32,16 @@ public class Curso {
         this.aulas.add(aula);
     }
 
+    public int getTempoTotal() {
+        // No Java 8, toda coleção tem um método que
+        // se chama stream, não iremos entrar em
+
+        return this.aulas.stream().mapToInt(Aula::getTempo).sum();
+    }
+
+    @Override
+    public String toString() {
+        return "Curso [nome: " + this.nome + ", instrutor: " + this.instrutor + "aulas: " + this.aulas + "]";
+    }
+    
 }

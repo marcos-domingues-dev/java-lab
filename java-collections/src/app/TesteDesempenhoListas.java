@@ -8,6 +8,14 @@ public class TesteDesempenhoListas {
 
     public static void main(String[] args) {
 
+        /*
+         * O ArrayList, como diz o nome, internamente usa um array para guardar os
+         * elementos. Ele consegue fazer operações de maneira muito eficiente, como
+         * invocar o método get(indice). Se você precisa pegar o décimo quinto elemento,
+         * ele te devolverá isso bem rápido.
+         * 
+         */
+
         System.out.println();
         System.out.println("**** ArrayList vs LinkedList ***");
 
