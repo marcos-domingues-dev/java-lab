@@ -1,6 +1,11 @@
 package br.com.alura.leilao;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItems;
 import static org.junit.Assert.assertEquals;
+
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -17,11 +22,6 @@ public class TestaAvaliadorLeilao {
     public void Setup() {
         this.leiloeiro = new AvaliadorLeilao();
     }
-
-    // @After
-    // public void finaliza() {
-    //     //System.out.println("fim");
-    // }
 
     @Test
     public void deveVerificarMaiorEMenorLance() {
@@ -163,4 +163,51 @@ public class TestaAvaliadorLeilao {
         assertEquals(2100L, this.leiloeiro.getTresMaiores().get(2).getValor(), 0.0001);
     }
 
+    // *** Using hamcrest ** //
+
+    @Test
+    public void deveEntenderLancesEmOrdemCrescente() {       
+        
+        // 1 - Cenário : três lances (Given)
+        final Usuario joao = new Usuario("João");
+        final Usuario jose = new Usuario("José");
+        final Usuario maria = new Usuario("Maria");
+
+        final Leilao leilao = new Leilao("Guitarra Les Paul");
+        leilao.propoe(new Lance(joao, 250));
+        leilao.propoe(new Lance(jose, 300));
+        leilao.propoe(new Lance(maria, 400));
+
+        // 2 - Executando a ação (When)
+        final AvaliadorLeilao leiloeiro = new AvaliadorLeilao();
+        leiloeiro.Verificar(leilao);
+
+        assertThat(leiloeiro.getMenorLance(), equalTo(250.0));
+        assertEquals(400.0, leiloeiro.getMaiorLance(), 0.00001);
+    }
+
+    @Test
+    public void deveTerOsTresMaioresReviwedSource() {
+        // Cenário
+        final Usuario rapunzel = new Usuario("Rapunzel");
+        final Usuario jose = new Usuario("José");
+
+        final Leilao leilao = new Leilao("XBox One");
+        leilao.propoe(new Lance(jose, 1900));
+        leilao.propoe(new Lance(rapunzel, 2100));
+        leilao.propoe(new Lance(jose, 2500));
+        leilao.propoe(new Lance(rapunzel, 2700));        
+
+        // 2 - Ação
+        AvaliadorLeilao leiloeiro = new AvaliadorLeilao();
+        leiloeiro.Verificar(leilao);
+
+        // 3 - Verificar
+        List<Lance> tresMaiores = leiloeiro.getTresMaiores();
+        assertThat(tresMaiores, hasItems(
+            new Lance(rapunzel, 2100),
+            new Lance(jose, 2500),
+            new Lance(rapunzel, 2700)
+        ));
+    }
 }
