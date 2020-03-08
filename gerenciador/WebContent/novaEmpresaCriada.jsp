@@ -1,14 +1,16 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<%
-	//scriplet
-	String nomeEmpresa = (String) request.getAttribute("nomeEmpresa");
-	System.out.println(nomeEmpresa);
-%>
 <html>
 <head>
 <title>Resultado de - Nova empresa cadastrada</title>
 </head>
 <body>
-	Nova empresa cadastrada: <%=nomeEmpresa%>
+	<c:if test="${not empty nomeEmpresa}">
+            Empresa ${ nomeEmpresa } cadastrada com sucesso!
+        </c:if>
+
+	<c:if test="${empty nomeEmpresa}">
+            Nenhuma empresa cadastrada!
+        </c:if>
 </body>
 </html>
