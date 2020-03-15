@@ -6,22 +6,22 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Banco {
-	
+
 	private static List<Empresa> empresas = new ArrayList<>();
-	
-	static {		 
+
+	static {
 		Date abertura = new Date();
 		Empresa e1 = new Empresa(1, "Alura", abertura);
 		Empresa e2 = new Empresa(2, "Caelum", abertura);
 		Banco.empresas.add(e1);
 		Banco.empresas.add(e2);
 	}
-	
+
 	public List<Empresa> getEmpresas() {
 		return Banco.empresas;
 	}
-	
-	public static Integer getEmpresaNextId() {		
+
+	public static Integer getEmpresaNextId() {
 		return Banco.empresas.size() + 1;
 	}
 
@@ -31,7 +31,7 @@ public class Banco {
 
 	public void removerEmpresa(Integer id) {
 		Iterator<Empresa> it = Banco.empresas.iterator();
-		
+
 		while (it.hasNext()) {
 			Empresa emp = it.next();
 			if (emp.getId() == id) {
@@ -47,6 +47,19 @@ public class Banco {
 			}
 		}
 		return null;
+	}
+
+	public void alterarEmpresa(Empresa empresa) {
+		int indice = 0;
+		Iterator<Empresa> it = Banco.empresas.iterator();
+
+		while (it.hasNext()) {
+			Empresa emp = it.next();
+			if (emp.getId() == empresa.getId()) {
+				Banco.empresas.set(indice, empresa);
+			}
+			indice++;
+		}
 	}
 
 }

@@ -10,9 +10,15 @@
 <title>Cadastro de empresa</title>
 </head>
 <body>
+
+    <!-- Os inputs do form serão enviados ao servidor  -->
+    <!-- Lá, eles serão resgatados como 'parâmetros' -->
+    <!--   request.getParameter("id") -->
+    
 	<form action="${linkServletAlteraEmpresa}" method="post">		
 		Nome:<input type="text" name="nome" value="${empresa.nome}"/>
 		Data abertura:<input type="text" name="data" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${empresa.dataAbertura}"/>"/>
+		<input type="hidden" name="id" value="${empresa.id}" />
 		<input type="submit">
 	</form>
 </body>
