@@ -10,7 +10,9 @@
 <title>Cadastro de empresa</title>
 </head>
 <body>
-
+	
+	<c:import url="logout-parcial.jsp" />
+	
     <!-- Os inputs do form serão enviados ao servidor  -->
     <!-- Lá, eles serão resgatados como 'parâmetros' -->
     <!--   request.getParameter("id") -->

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.alura.gerenciador.acao.Acao;
 
@@ -16,7 +17,18 @@ public class UnicaEntradaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String paramAcao = request.getParameter("acao");
+		
+		HttpSession session = request.getSession();
+		boolean usuarioNaoEstaLogado = session.getAttribute("usuarioLogado") == null;
+		boolean ehUmaAcaoProtegida = (!paramAcao.equals("Login")) && (!paramAcao.equals("ShowFormLogin"));
+
+		if (usuarioNaoEstaLogado && ehUmaAcaoProtegida) {
+			response.sendRedirect("entrada?acao=ShowFormLogin");	
+			return;
+		}
+		
 		String resposta = null;
 		
 		try {
@@ -36,22 +48,5 @@ public class UnicaEntradaServlet extends HttpServlet {
 		} else {
 			response.sendRedirect(respostaArgs[1]);		
 		}
-		
-//		if (paramAcao.equals("ListarEmpresas")) {
-//			AcaoListarEmpresas acao = new AcaoListarEmpresas();
-//			resposta = acao.executar(request, response);
-//		}  else if(paramAcao.equals("RemoverEmpresa")) {
-//		    AcaoRemoverEmpresa acao = new AcaoRemoverEmpresa();
-//		    resposta = acao.executa(request, response);
-//		} else if(paramAcao.equals("MostrarEmpresa")) {
-//		    AcaoMostrarEmpresa acao = new AcaoMostrarEmpresa();
-//		    resposta = acao.executa(request, response);
-//		} else if(paramAcao.equals("AlterarEmpresa")) {
-//		    AcaoAlterarEmpresa acao = new AcaoAlterarEmpresa();
-//		    resposta = acao.executa(request, response);
-//		} else if(paramAcao.equals("NovaEmpresa")) {
-//		    AcaoNovaEmpresa acao = new AcaoNovaEmpresa();
-//		    resposta = acao.executa(request, response);
-//		}
 	}
 }

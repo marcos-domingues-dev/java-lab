@@ -4,16 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Cadastro de empresa</title>
+<title>Login do usuário</title>
 </head>
 <body>
-
-	<c:import url="logout-parcial.jsp" />
-
 	<form action="${linkEntradaServlet}" method="post">		
-		Nome:<input type="text" name="nome" />
-		Data abertura:<input type="text" name="data" />
-		<input type="hidden" name="acao" value="NovaEmpresa">
+		Login:<input type="text" name="login" />
+		Senha:<input type="password" name="senha" />
+		
+		<input type="hidden" name="acao" value="Login">
 		<input type="submit">
 	</form>
 </body>
