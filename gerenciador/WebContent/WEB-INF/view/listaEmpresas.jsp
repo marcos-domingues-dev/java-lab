@@ -8,6 +8,13 @@
 <title>Lista de empresas</title>
 </head>
 <body>
+	
+	<c:import url="logout-parcial.jsp"></c:import>
+	
+	Usuario Logado: ${usuarioLogado.login } <!-- Var "usuarioLogado" nao pode comecar com letra Maiuscula -->
+	<br/>
+	<br/>
+	<br/>
 
     <c:if test="${not empty empresa}">
             Empresa ${ empresa } cadastrada com sucesso!

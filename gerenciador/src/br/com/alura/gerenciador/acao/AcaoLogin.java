@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Usuario;
@@ -24,6 +25,8 @@ public class AcaoLogin implements Acao {
 		Usuario usuario = banco.existeUsuario(paramLogin, paramSenha);
 
 		if (usuario != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("usuarioLogado", usuario); //-> Var nao pode comecar com letra Maiuscula
 			return "redirect:entrada?acao=ListarEmpresas";
 		} else {
 			return "redirect:entrada?acao=ShowFormLogin";
