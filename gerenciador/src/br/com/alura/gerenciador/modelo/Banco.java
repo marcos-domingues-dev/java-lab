@@ -1,5 +1,6 @@
 package br.com.alura.gerenciador.modelo;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -12,8 +13,11 @@ public class Banco {
 
 	static {
 		Date abertura = new Date();
+		Date abertura2 = new Date();
+		abertura2.setMonth(2);
+		LocalDateTime now = LocalDateTime.now();
 		Empresa e1 = new Empresa(1, "Alura", abertura);
-		Empresa e2 = new Empresa(2, "Caelum", abertura);
+		Empresa e2 = new Empresa(2, "Caelum", abertura2);
 		Banco.empresas.add(e1);
 		Banco.empresas.add(e2);
 		
