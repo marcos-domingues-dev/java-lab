@@ -7,5 +7,6 @@
 /java-oo/bytebank/bin
 /java-oo/folha-pagto/bin
 /java-oo/bytebank/doc
+/gerenciador/export
 *.bin
 *.class
