@@ -7,13 +7,21 @@ import javax.persistence.Id;
 
 @Entity
 public class Conta {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private Integer agencia;
 	private Integer numero;
 	private String titular;
 	private double saldo;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public Integer getAgencia() {
 		return agencia;
@@ -42,7 +50,7 @@ public class Conta {
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
-	
+
 	public double getSaldo() {
 		return saldo;
 	}

@@ -28,30 +28,10 @@ public class TesteContaComSaldoParaMerge {
 	}
 
 	private static void CriarContaDoHulk(EntityManager em) {
-		if (em.find(Conta.class, 4L) == null) {			
-			Conta conta = new Conta(); // -> Estado JPA "Transient"
-			conta.setAgencia(137);
-			conta.setNumero(654321);
-			conta.setTitular("Bruce Benner");
-			conta.setSaldo(890000.0);
-			
-			em.getTransaction().begin();
-			em.persist(conta); // -> Estado JPA "Managed"
-			em.getTransaction().commit();
-		}
+		TesteContasRepository.resgatarContaDoHulk(em);
 	}
 
 	private static void CriarContaDoCapitaoAmerica(EntityManager em) {
-		if (em.find(Conta.class, 3L) == null) {			
-			Conta conta = new Conta();
-			conta.setAgencia(137);
-			conta.setNumero(123456);
-			conta.setTitular("Steven Rogers");
-			conta.setSaldo(120.0);
-			
-			em.getTransaction().begin();
-			em.persist(conta);
-			em.getTransaction().commit();
-		}
+		TesteContasRepository.resgatarContaDoCapitaoAmerica(em);
 	}
 }
