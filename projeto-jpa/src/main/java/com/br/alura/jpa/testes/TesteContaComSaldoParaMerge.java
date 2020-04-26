@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import com.br.alura.jpa.modelo.Conta;
+import com.br.alura.jpa.testes.repositorios.TesteContasRepository;
 
 public class TesteContaComSaldoParaMerge {
 

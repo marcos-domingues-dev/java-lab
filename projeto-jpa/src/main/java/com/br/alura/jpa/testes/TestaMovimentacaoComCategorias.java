@@ -13,6 +13,8 @@ import com.br.alura.jpa.modelo.Categoria;
 import com.br.alura.jpa.modelo.Conta;
 import com.br.alura.jpa.modelo.Movimentacao;
 import com.br.alura.jpa.modelo.TipoMovimentacao;
+import com.br.alura.jpa.testes.repositorios.TesteCategoriasRepository;
+import com.br.alura.jpa.testes.repositorios.TesteContasRepository;
 
 public class TestaMovimentacaoComCategorias {
 

@@ -1,4 +1,4 @@
-package com.br.alura.jpa.testes;
+package com.br.alura.jpa.testes.repositorios;
 
 import javax.persistence.EntityManager;
 
