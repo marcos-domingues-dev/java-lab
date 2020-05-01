@@ -22,7 +22,8 @@ public class JpaConfigurator {
 	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
 	    dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-	    dataSource.setUrl("jdbc:mysql://localhost/projeto_jpa");
+	    //dataSource.setUrl("jdbc:mysql://localhost/projeto_jpa");
+	    dataSource.setUrl("jdbc:mysql://localhost/projeto_jpa?useSSL=false&serverTimezone=UTC");	    
 	    dataSource.setUsername("root");
 	    dataSource.setPassword("");
 
@@ -40,8 +41,8 @@ public class JpaConfigurator {
 				.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
 		Properties props = new Properties();
-
-		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
+		//props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
+		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");		
 		props.setProperty("hibernate.show_sql", "true");
 		props.setProperty("hibernate.hbm2ddl.auto", "create-drop");
 

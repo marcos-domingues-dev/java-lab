@@ -35,7 +35,7 @@ public class CriadorDeProdutos {
 				casaDoCodigo.setNome("Casa do Código");
 				
 				em.persist(casaDoCodigo);
-				\\\w
+				//\\\w
 				Loja musicalAlegre = new Loja();
 				musicalAlegre.setNome("Musical Alegre");
 				
