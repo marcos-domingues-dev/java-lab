@@ -27,8 +27,8 @@ public class ProdutoController {
 	private ProdutoDao produtoDao;
 	
 	@Transactional
-	@RequestMapping(method=RequestMethod.POST, name="cadastraProduto")
-	public String salvar(@ModelAttribute @Valid Produto produto, BindingResult result, RedirectAttributes atts) {
+	@RequestMapping(method=RequestMethod.POST, value="/cadastraProduto")
+	public String cadastraProduto(@ModelAttribute @Valid Produto produto, BindingResult result, RedirectAttributes atts) {
 		
 		if(result.hasErrors()) {
 			return form(produto);
@@ -67,10 +67,8 @@ public class ProdutoController {
 			@RequestParam(required=false) Integer lojaId) {
 		
 		List<Produto> produtos = produtoDao.getProdutos(nome, categoriaId, lojaId);
-		
 		model.addAttribute("produtos", produtos);
 		
-		return "home";
-		
+		return "home";		
 	}
 }

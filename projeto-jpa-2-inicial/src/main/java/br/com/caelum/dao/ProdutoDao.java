@@ -60,8 +60,30 @@ public class ProdutoDao {
 
 		TypedQuery<Produto> typedQuery = em.createQuery(query);
 		return typedQuery.getResultList();
-
 	}
+	
+	/* Criteria API do Hibernate
+	@Transactional
+	public List<Produto> getProdutos(String nome, Integer categoriaId, Integer lojaId) {
+	    Session session = em.unwrap(Session.class);
+	    Criteria criteria = session.createCriteria(Produto.class);
+
+	    if (!nome.isEmpty()) {
+	        criteria.add(Restrictions.like("nome", "%" + nome + "%"));
+	    }
+
+	    if (lojaId != null) {
+	        criteria.add(Restrictions.like("loja.id", lojaId));
+	    }
+
+	    if (categoriaId != null) {
+	        criteria.setFetchMode("categorias", FetchMode.JOIN)
+	            .createAlias("categorias", "c")
+	            .add(Restrictions.like("c.id", categoriaId));
+	    }
+
+	    return (List<Produto>) criteria.list();
+	} */
 
 	public void insere(Produto produto) {
 		if (produto.getId() == null)
