@@ -22,7 +22,7 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>${statistics.queryCacheHitCount}</td>	
+								<td>${statistics.queryCacheHitCount}</td>
 								<td>${statistics.queryCacheMissCount}</td>
 								<td>${statistics.connectCount}</td>
 							</tr>

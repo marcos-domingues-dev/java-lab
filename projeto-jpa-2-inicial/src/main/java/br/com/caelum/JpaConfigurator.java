@@ -6,6 +6,8 @@ import java.util.Properties;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.stat.Statistics;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -45,19 +47,42 @@ public class JpaConfigurator {
 		entityManagerFactory.setPackagesToScan("br.com.caelum");
 		entityManagerFactory.setDataSource(dataSource);
 
-		entityManagerFactory
-				.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+		entityManagerFactory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
 		Properties props = new Properties();
-		//props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
 		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");		
 		props.setProperty("hibernate.show_sql", "true");
-		props.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+		
+		props.setProperty("hibernate.hbm2ddl.auto", "create-drop");	// validate, update, create ou create-drop.
+		/*		
+		validate: validar o schema, não faz mudanças no banco de dados.
+		update: faz update o schema.
+		create: cria o schema, destruindo dados anteriores.
+		create-drop: drop o schema quando ao terminar a sessão.
+		 */
+		
+		// Configura o cache de segundo nivel
+        props.setProperty("hibernate.cache.use_second_level_cache", "true");
+        props.setProperty("hibernate.cache.use_query_cache", "true"); // -> CriteriaQuery -> ProdutoDaogetProdutos()
+        
+        // Configura o provedor do cache
+        // EhCache é um dos providers mais comuns de se trabalhar com Hibernate
+        props.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory");
 
+        
+        // Statistics
+        props.setProperty("hibernate.generate_statistics", "true");
+        
 		entityManagerFactory.setJpaProperties(props);
 		return entityManagerFactory;
 	}
 
+	// adicionarmos Statistics ao contexto do Spring
+	@Bean
+	public Statistics statistics(EntityManagerFactory emf) { 
+	    return emf.unwrap(SessionFactory.class).getStatistics();
+	}	
+	
 	@Bean
 	public JpaTransactionManager getTransactionManager(EntityManagerFactory emf) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -65,5 +90,6 @@ public class JpaConfigurator {
 
 		return transactionManager;
 	}
+	
 
 }
